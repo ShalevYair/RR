@@ -1,5 +1,6 @@
 import { stages } from "../data/stages";
 import StageCard from "./StageCard";
+import ProjectInfo from "./ProjectInfo";
 
 export default function FlowChart() {
   return (
@@ -8,6 +9,8 @@ export default function FlowChart() {
         <h1>תהליך הנפקת הוראת רישום כללית</h1>
         <p>פרויקט ערבה — משרד התחבורה, אגף הרכב ושירותי תחזוקה</p>
       </header>
+
+      <ProjectInfo />
 
       <div className="stages-list">
         {stages.map((stage, index) => (
