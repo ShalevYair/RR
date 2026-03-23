@@ -39,6 +39,205 @@ body {
   font-weight: 300;
 }
 
+/* ═══ PROJECT INFO ═══ */
+
+.project-info {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-info-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+}
+
+.project-info-header h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.project-info-header p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+.project-info-desc {
+  margin-top: 12px !important;
+  color: #cbd5e1 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6;
+}
+
+.info-section {
+  background: #fff;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.info-section-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: right;
+  direction: rtl;
+  transition: background 0.2s ease;
+}
+
+.info-section-toggle:hover {
+  background: #f8fafc;
+}
+
+.info-chevron {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #94a3b8;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  transform: rotate(0deg);
+}
+
+.info-chevron.open {
+  transform: rotate(90deg);
+}
+
+.info-section-body {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-summary {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.65;
+}
+
+.info-goals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.info-goal-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border-right: 4px solid #3b82f6;
+}
+
+.info-goal-card strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.info-goal-card p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.info-box {
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.info-box.problem {
+  background: #fff7ed;
+  border-right: 4px solid #f97316;
+}
+
+.info-box.solution {
+  background: #f0fdf4;
+  border-right: 4px solid #22c55e;
+}
+
+.info-box strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.info-box p {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.info-details {
+  padding-right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-details li {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.info-standards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-standard-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  border-right: 4px solid #7c3aed;
+}
+
+.info-standard-card strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 3px;
+}
+
+.info-standard-card p {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .info-goals {
+    grid-template-columns: 1fr;
+  }
+
+  .project-info-header {
+    padding: 20px;
+  }
+
+  .project-info-header h2 {
+    font-size: 1.25rem;
+  }
+}
+
 /* ═══ STAGES LIST ═══ */
 
 .stages-list {
