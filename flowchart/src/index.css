@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  direction: rtl;
+  color: #1e293b;
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+/* ═══ HEADER ═══ */
+
+.flowchart-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.flowchart-header h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.flowchart-header p {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 300;
+}
+
+/* ═══ STAGES LIST ═══ */
+
+.stages-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stage-connector {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+/* ═══ STAGE CARD ═══ */
+
+.stage-block {
+  width: 100%;
+}
+
+.stage-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  user-select: none;
+}
+
+.stage-card:hover {
+  border-color: var(--stage-color);
+  box-shadow: 0 8px 25px -5px color-mix(in srgb, var(--stage-color) 25%, transparent);
+  transform: translateY(-2px);
+}
+
+.stage-card.expanded {
+  border-color: var(--stage-color);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: dashed;
+  box-shadow: 0 4px 15px -3px color-mix(in srgb, var(--stage-color) 20%, transparent);
+}
+
+.stage-number-circle {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.stage-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stage-top-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.stage-title {
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.stage-chevron {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #94a3b8;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.stage-chevron.open {
+  transform: rotate(-90deg);
+}
+
+.stage-description {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 300;
+}
+
+/* ═══ SUB-STAGES PANEL ═══ */
+
+.substages-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.substages-panel.open {
+  max-height: 2000px;
+}
+
+.substages-container {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-top: none;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ═══ SUB-STAGE CARD ═══ */
+
+.substage-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.substage-connector {
+  height: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.substage-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  border: 1.5px solid #e2e8f0;
+  border-right: 4px solid var(--accent);
+  transition: all 0.25s ease;
+}
+
+.substage-card.hovered {
+  border-color: var(--accent);
+  border-right-width: 4px;
+  box-shadow: 0 4px 12px -3px rgba(0, 0, 0, 0.08);
+  transform: translateX(-4px);
+}
+
+.substage-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.substage-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  min-width: 28px;
+}
+
+.substage-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.substage-actor {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.substage-description {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ═══ FOOTER ═══ */
+
+.flowchart-footer {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.flowchart-footer p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+/* ═══ RESPONSIVE ═══ */
+
+@media (max-width: 600px) {
+  #root {
+    padding: 20px 12px 40px;
+  }
+
+  .flowchart-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .stage-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .stage-number-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .stage-title {
+    font-size: 1rem;
+  }
+
+  .substages-container {
+    padding: 14px 12px;
+  }
+
+  .substage-header {
+    gap: 6px;
+  }
+
+  .substage-card {
+    padding: 10px 12px;
+  }
+}
